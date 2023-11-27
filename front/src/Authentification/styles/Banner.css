@@ -1,0 +1,32 @@
+.logInButton {
+    width: 80px;
+    height: 50px;
+    margin-right: 30px;
+    border-radius: 15px;
+}
+
+.sixDigit {
+    width: 80px;
+    height: 30px;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-right: 30px;
+  }
+  
+  .sixDigit:focus {
+    border-color: grey;
+  }
+
+  .otpArea {
+    display: flex;
+    align-items: center;
+  }
+  
+  .otpMessage {
+    font-style: italic;
+    width: 350px;
+    color: rgb(75, 75, 75);
+  }

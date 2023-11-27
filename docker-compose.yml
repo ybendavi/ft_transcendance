@@ -1,0 +1,48 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./back
+    container_name: backend
+    ports:
+      - 8080:8080
+      - 5000:5000
+    depends_on:
+      - database
+    networks:
+      - transcendence
+    env_file:
+      - .env
+    volumes:
+      - ./back/src/:/back/src/
+
+  frontend:
+    build:
+      context: ./front
+
+    container_name: frontend
+
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    networks:
+      - transcendence
+    volumes:
+      - ./front/src/:/front/src/
+    env_file:
+      - .env
+
+  database:
+    container_name: database
+    image: postgres
+    ports:
+      - 5432:5432
+    env_file:
+     - .env
+
+    networks:
+      - transcendence
+
+networks:
+  transcendence:
